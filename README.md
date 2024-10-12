@@ -1,12 +1,12 @@
 # Readme
-A note about Zero-copy.
+A comparison between Traditional-copy and Zero-copy.
 
 ```
 问题：把磁盘中的一个文件用网卡发出去。
 ```
 
 ```
-解法一：使用传统的方法：
+解法一：使用Traditional-copy：
 
 会发生四次数据拷贝，会浪费CPU周期和内存空间：
 
@@ -24,7 +24,7 @@ A note about Zero-copy.
 ```
 
 ```
-解法二：使用Zero-copy的方法：
+解法二：使用Zero-copy，搭配不支持Scatter/Gather功能的网卡：
 
 会发生三次数据拷贝，会浪费CPU周期和内存空间：
 
@@ -39,7 +39,7 @@ A note about Zero-copy.
 ```
 
 ```
-解法三：使用Zero-copy的方法，同时要求该网卡支持Scatter/Gather功能：
+解法三：使用Zero-copy，搭配支持Scatter/Gather功能的网卡：
 
 会发生两次数据拷贝，不会浪费CPU周期和内存空间：
 
