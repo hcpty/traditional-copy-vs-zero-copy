@@ -1,5 +1,5 @@
 # Readme
-A note about zero-copy.
+A note about Zero-copy.
 
 ```
 问题：把磁盘中的一个文件用网卡发出去。
