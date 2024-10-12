@@ -39,7 +39,7 @@ A note about zero-copy.
 ```
 
 ```
-解法三：使用Zero-copy的方法，同时要求该网卡支持Scatter/Gather特性：
+解法三：使用Zero-copy的方法，同时要求该网卡支持Scatter/Gather功能：
 
 会发生两次数据拷贝，不会浪费CPU周期和内存总线带宽：
 
