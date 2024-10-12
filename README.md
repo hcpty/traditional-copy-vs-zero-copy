@@ -35,7 +35,7 @@ A note about zero-copy.
 ```
 
 ```
-解法三：使用zero-copy的方法，同时该网卡支持gather operations：
+解法三：使用zero-copy的方法，同时要求该网卡支持gather operations：
 
 会发生两次数据拷贝，不会消耗CPU周期和内存带宽：
 1. DMA拷贝，磁盘缓冲 -> 内核磁盘缓冲
