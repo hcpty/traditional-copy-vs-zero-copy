@@ -6,7 +6,7 @@ A comparison between Traditional-copy and Zero-copy.
 ```
 
 ```
-解法1：使用Traditional-copy，会发生四次数据拷贝，会浪费CPU周期和内存空间，会发生两次系统调用，该应用会经历四次上下文切换：
+解法1：使用Traditional-copy，会发生四次数据拷贝，该应用会发起两次系统调用和经历四次上下文切换：
 
 1. Direct Memory Access Transfer，磁盘缓冲 -> 内核磁盘缓冲
 2. Traditional Memory Access Transfer，内核磁盘缓冲 -> 应用缓冲
@@ -20,7 +20,7 @@ A comparison between Traditional-copy and Zero-copy.
 ```
 
 ```
-解法2.1：使用Zero-copy，搭配不支持Scatter/Gather功能的网卡，会发生三次数据拷贝，会浪费CPU周期和内存空间，会发生一次系统调用，该应用会经历两次上下文切换：
+解法2.1：使用Zero-copy，搭配不支持Scatter/Gather功能的网卡，会发生三次数据拷贝，该应用会发起一次系统调用和经历两次上下文切换：
 
 1. Direct Memory Access Transfer，磁盘缓冲 -> 内核磁盘缓冲
 2. Traditional Memory Access Transfer，内核磁盘缓冲 -> 内核网卡缓冲
@@ -31,7 +31,7 @@ A comparison between Traditional-copy and Zero-copy.
 ```
 
 ```
-解法2.2：使用Zero-copy，搭配支持Scatter/Gather功能的网卡，会发生两次数据拷贝，不会浪费CPU周期和内存空间，会发生一次系统调用，该应用会经历两次上下文切换：
+解法2.2：使用Zero-copy，搭配支持Scatter/Gather功能的网卡，会发生两次数据拷贝，该应用会会发起一次系统调用和经历两次上下文切换：
 
 1. Direct Memory Access Transfer，磁盘缓冲 -> 内核磁盘缓冲
 2. Direct Memory Access Transfer，内核磁盘缓冲 -> 网卡缓冲
