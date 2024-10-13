@@ -39,3 +39,6 @@ A comparison between Traditional-copy and Zero-copy.
 1. 当应用调用sendfile()时，应用会被换出
 2. 当应用请求的文件数据被拷贝到网卡缓冲后，应用会被换入
 ```
+
+Credits:
+- [Efficient data transfer through zero copy - IBM Developer](https://developer.ibm.com/articles/j-zerocopy)
