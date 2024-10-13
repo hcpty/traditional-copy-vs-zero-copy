@@ -1,8 +1,6 @@
 # Readme
 A comparison between Traditional-copy and Zero-copy.
 
-### Contents
-
 ```
 问题：把磁盘中的一个文件用网卡发出去。
 ```
