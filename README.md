@@ -10,8 +10,8 @@ A comparison between Traditional-copy and Zero-copy.
 
 会发生四次数据拷贝，会浪费CPU周期和内存空间：
 1. Direct Memory Access拷贝，磁盘缓冲 -> 内核磁盘缓冲
-2. Tranditional Memory Access拷贝，内核磁盘缓冲 -> 应用缓冲
-3. Tranditional Memory Access拷贝，应用缓冲 -> 内核网卡缓冲
+2. Traditional Memory Access拷贝，内核磁盘缓冲 -> 应用缓冲
+3. Traditional Memory Access拷贝，应用缓冲 -> 内核网卡缓冲
 4. Direct Memory Access拷贝，内核网卡缓冲 -> 网卡缓冲
 
 会发生两次系统调用，该应用会经历四次上下文切换：
@@ -26,7 +26,7 @@ A comparison between Traditional-copy and Zero-copy.
 
 会发生三次数据拷贝，会浪费CPU周期和内存空间：
 1. Direct Memory Access拷贝，磁盘缓冲 -> 内核磁盘缓冲
-2. Tranditional Memory Access拷贝，内核磁盘缓冲 -> 内核网卡缓冲
+2. Traditional Memory Access拷贝，内核磁盘缓冲 -> 内核网卡缓冲
 3. Direct Memory Access拷贝，内核网卡缓冲 -> 网卡缓冲
 
 会发生一次系统调用，该应用会经历两次上下文切换：
