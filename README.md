@@ -6,7 +6,7 @@ A comparison between Traditional-copy and Zero-copy.
 ```
 
 ```
-解法一：使用Traditional-copy：
+解法1：使用Traditional-copy：
 
 会发生四次数据拷贝，会浪费CPU周期和内存空间：
 
@@ -24,7 +24,7 @@ A comparison between Traditional-copy and Zero-copy.
 ```
 
 ```
-解法二：使用Zero-copy，搭配不支持Scatter/Gather功能的网卡：
+解法2.1：使用Zero-copy，搭配不支持Scatter/Gather功能的网卡：
 
 会发生三次数据拷贝，会浪费CPU周期和内存空间：
 
@@ -39,7 +39,7 @@ A comparison between Traditional-copy and Zero-copy.
 ```
 
 ```
-解法三：使用Zero-copy，搭配支持Scatter/Gather功能的网卡：
+解法2.2：使用Zero-copy，搭配支持Scatter/Gather功能的网卡：
 
 会发生两次数据拷贝，不会浪费CPU周期和内存空间：
 
