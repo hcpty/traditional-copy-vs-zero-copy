@@ -14,9 +14,9 @@ A comparison between Traditional-copy and Zero-copy.
 4. Direct Memory Access Transfer，内核网卡缓冲 -> 网卡缓冲
 
 1. 当应用调用read()时，应用会被换出
-2. 当应用请求的文件数据被写入应用缓冲后，应用会被换入
+2. 当应用请求的文件数据被拷贝到应用缓冲后，应用会被换入
 3. 当应用调用send()时，应用会被换出
-4. 当应用请求的文件数据被写入网卡缓冲后，应用会被换入
+4. 当应用请求的文件数据被拷贝到网卡缓冲后，应用会被换入
 ```
 
 ```
@@ -27,7 +27,7 @@ A comparison between Traditional-copy and Zero-copy.
 3. Direct Memory Access Transfer，内核网卡缓冲 -> 网卡缓冲
 
 1. 当应用调用sendfile()时，应用会被换出
-2. 当应用请求的文件数据被写入网卡缓冲后，应用会被换入
+2. 当应用请求的文件数据被拷贝到网卡缓冲后，应用会被换入
 ```
 
 ```
@@ -37,5 +37,5 @@ A comparison between Traditional-copy and Zero-copy.
 2. Direct Memory Access Transfer，内核磁盘缓冲 -> 网卡缓冲
 
 1. 当应用调用sendfile()时，应用会被换出
-2. 当应用请求的文件数据被写入网卡缓冲后，应用会被换入
+2. 当应用请求的文件数据被拷贝到网卡缓冲后，应用会被换入
 ```
