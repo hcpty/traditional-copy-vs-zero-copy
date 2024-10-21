@@ -12,7 +12,9 @@ A comparison between Traditional-copy and Zero-copy.
 2. 当应用程序请求的文件数据被拷贝到应用程序缓冲后，应用程序会被换入。
 3. 当应用程序调用send()时，应用程序会被换出。
 4. 当应用程序请求的文件数据被拷贝到网卡缓冲后，应用程序会被换入。
+```
 
+```
 1. Direct Memory Access Transfer，磁盘缓冲 -> 内核磁盘缓冲。
 2. Traditional Memory Access Transfer，内核磁盘缓冲 -> 应用程序缓冲。
 3. Traditional Memory Access Transfer，应用程序缓冲 -> 内核网卡缓冲。
@@ -24,7 +26,9 @@ A comparison between Traditional-copy and Zero-copy.
 ```
 1. 当应用程序调用sendfile()时，应用程序会被换出。
 2. 当应用程序请求的文件数据被拷贝到网卡缓冲后，应用程序会被换入。
+```
 
+```
 1. Direct Memory Access Transfer，磁盘缓冲 -> 内核磁盘缓冲。
 2. Traditional Memory Access Transfer，内核磁盘缓冲 -> 内核网卡缓冲。
 3. Direct Memory Access Transfer，内核网卡缓冲 -> 网卡缓冲。
@@ -35,7 +39,9 @@ A comparison between Traditional-copy and Zero-copy.
 ```
 1. 当应用程序调用sendfile()时，应用程序会被换出。
 2. 当应用程序请求的文件数据被拷贝到网卡缓冲后，应用程序会被换入。
+```
 
+```
 1. Direct Memory Access Transfer，磁盘缓冲 -> 内核磁盘缓冲。
 2. Direct Memory Access Transfer，内核磁盘缓冲 -> 网卡缓冲。
 ```
