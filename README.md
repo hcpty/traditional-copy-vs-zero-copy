@@ -21,7 +21,7 @@ A comparison between Traditional-Copy and Zero-Copy.
 4. Direct Memory Access Transfer，内核网卡缓冲 -> 网卡缓冲。
 ```
 
-解法2.1：使用Zero-Copy，需要支持Zero-Copy操作的内核，在搭配不支持Scatter/Gather操作的网卡的情况下，应用程序会发起一次系统调用和经历两次上下文切换，会发生三次数据拷贝：
+解法2.1：使用Zero-Copy，需要支持Zero-Copy操作的内核，如果搭配使用不支持Scatter/Gather操作的网卡，那么应用程序会发起一次系统调用和经历两次上下文切换，会发生三次数据拷贝：
 
 ```
 1. 当应用程序调用sendfile()时，应用程序会被换出。
@@ -34,7 +34,7 @@ A comparison between Traditional-Copy and Zero-Copy.
 3. Direct Memory Access Transfer，内核网卡缓冲 -> 网卡缓冲。
 ```
 
-解法2.2：使用Zero-Copy，需要支持Zero-Copy操作的内核，在搭配支持Scatter/Gather操作的网卡的情况下，应用程序会发起一次系统调用和经历两次上下文切换，会发生两次数据拷贝：
+解法2.2：使用Zero-Copy，需要支持Zero-Copy操作的内核，如果搭配使用支持Scatter/Gather操作的网卡，那么应用程序会发起一次系统调用和经历两次上下文切换，会发生两次数据拷贝：
 
 ```
 1. 当应用程序调用sendfile()时，应用程序会被换出。
