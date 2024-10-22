@@ -1,11 +1,11 @@
 # Readme
-A comparison between Traditional-copy and Zero-copy.
+A comparison between Traditional-Copy and Zero-Copy.
 
-### Traditional-copy vs Zero-copy
+### Traditional-Copy vs Zero-Copy
 
 问题：把磁盘中的一个文件用网卡发出去。
 
-解法1：使用Traditional-copy，应用程序会发起两次系统调用和经历四次上下文切换，会发生四次数据拷贝：
+解法1：使用Traditional-Copy，应用程序会发起两次系统调用和经历四次上下文切换，会发生四次数据拷贝：
 
 ```
 1. 当应用程序调用read()时，应用程序会被换出。
@@ -21,7 +21,7 @@ A comparison between Traditional-copy and Zero-copy.
 4. Direct Memory Access Transfer，内核网卡缓冲 -> 网卡缓冲。
 ```
 
-解法2.1：使用Zero-copy，需要支持Zero-copy的内核，搭配不支持Scatter/Gather操作的网卡，应用程序会发起一次系统调用和经历两次上下文切换，会发生三次数据拷贝：
+解法2.1：使用Zero-Copy，需要支持Zero-Copy操作的内核，在搭配不支持Scatter/Gather操作的网卡的情况下，应用程序会发起一次系统调用和经历两次上下文切换，会发生三次数据拷贝：
 
 ```
 1. 当应用程序调用sendfile()时，应用程序会被换出。
@@ -34,7 +34,7 @@ A comparison between Traditional-copy and Zero-copy.
 3. Direct Memory Access Transfer，内核网卡缓冲 -> 网卡缓冲。
 ```
 
-解法2.2：使用Zero-copy，需要支持Zero-copy的内核，搭配支持Scatter/Gather操作的网卡，应用程序会发起一次系统调用和经历两次上下文切换，会发生两次数据拷贝：
+解法2.2：使用Zero-Copy，需要支持Zero-Copy操作的内核，在搭配支持Scatter/Gather操作的网卡的情况下，应用程序会发起一次系统调用和经历两次上下文切换，会发生两次数据拷贝：
 
 ```
 1. 当应用程序调用sendfile()时，应用程序会被换出。
